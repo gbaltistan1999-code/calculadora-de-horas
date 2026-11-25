@@ -105,4 +105,3 @@ The only browser storage is `localStorage["cdh-consent"]`, which holds the visit
 - [ ] Re-verify all legal figures on planalto.gov.br and update `lastUpdated` in `lib/site-config.ts` and the "consultados em" dates.
 - [ ] After deploy: run PageSpeed Insights, validate structured data with Google's Rich Results Test, and submit `sitemap.xml` in Google Search Console.
 - [ ] Optional: add a 1200×630 Open Graph image (`app/opengraph-image.png`).
-"# calculadora-de-horas" 
