@@ -72,6 +72,40 @@ export default function Page() {
         o limite aplicável ao seu contrato.
       </p>
 
+      <h2>Exemplo: conferindo o cartão de ponto da semana</h2>
+      <p>
+        Os horários reais raramente são redondos. Veja uma semana hipotética com jornada prevista de 8h48 por dia (44
+        horas semanais):
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Dia</th>
+            <th scope="col">Entrada</th>
+            <th scope="col">Saída</th>
+            <th scope="col">Intervalo</th>
+            <th scope="col">Trabalhado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Segunda</td><td>08:02</td><td>17:51</td><td>1:00</td><td>8h49</td></tr>
+          <tr><td>Terça</td><td>07:58</td><td>17:45</td><td>1:05</td><td>8h42</td></tr>
+          <tr><td>Quarta</td><td>08:10</td><td>18:02</td><td>0:58</td><td>8h54</td></tr>
+          <tr><td>Quinta</td><td>08:00</td><td>17:48</td><td>1:00</td><td>8h48</td></tr>
+          <tr><td>Sexta</td><td>08:05</td><td>17:30</td><td>1:00</td><td>8h25</td></tr>
+          <tr><td colSpan={4}><strong>Total da semana</strong></td><td><strong>43h38</strong></td></tr>
+        </tbody>
+      </table>
+      <p>
+        Comparando com as 44h00 previstas, a semana fechou com <strong>22 minutos a menos</strong>, quase todos na sexta,
+        quando a saída foi às 17:30. Para acompanhar esse saldo ao longo do mês, leve os totais para a{" "}
+        <Link href="/banco-de-horas">calculadora de banco de horas</Link>.
+      </p>
+      <p>
+        Dica: anote os horários no mesmo dia, de preferência direto do registro de ponto. Reconstruir a semana de memória
+        é a principal fonte de divergência com o espelho de ponto da empresa.
+      </p>
+
       <h2>Erros comuns e limitações</h2>
       <ul>
         <li>

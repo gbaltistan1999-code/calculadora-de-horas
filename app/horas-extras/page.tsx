@@ -67,6 +67,50 @@ export default function Page() {
         por que no <Link href="/converter-hora-decimal">conversor de horas em decimal</Link>.
       </p>
 
+      <h2>Exemplo completo de um mês com dois percentuais</h2>
+      <p>
+        É comum o mesmo mês ter horas extras com percentuais diferentes — por exemplo, 50% em dias úteis e 100% em um
+        dia previsto na convenção coletiva. Nesse caso, calcule cada grupo separadamente e some.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Cálculo</th>
+            <th scope="col">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Hora normal</td><td>R$ 3.000,00 ÷ 220</td><td>R$ 13,64</td></tr>
+          <tr><td>12h30 a 50%</td><td>12,5 h × R$ 13,6364 × 1,5</td><td>R$ 255,68</td></tr>
+          <tr><td>4h00 a 100%</td><td>4 h × R$ 13,6364 × 2</td><td>R$ 109,09</td></tr>
+          <tr><td><strong>Total de horas extras</strong></td><td>R$ 255,68 + R$ 109,09</td><td><strong>R$ 364,77</strong></td></tr>
+        </tbody>
+      </table>
+      <p>
+        Repare que a hora normal foi usada com 4 casas (R$ 13,6364) e só o resultado final foi arredondado. Arredondar a
+        hora para R$ 13,64 antes de multiplicar muda o resultado em alguns centavos. A calculadora acima já faz a conta
+        dessa forma: rode-a uma vez com 50% e outra com 100%.
+      </p>
+
+      <h2>Como conferir as horas extras no holerite</h2>
+      <ol>
+        <li>
+          Localize no holerite as linhas de horas extras. Elas costumam mostrar a <strong>quantidade</strong> e o{" "}
+          <strong>valor</strong> separadamente, muitas vezes uma linha para cada percentual.
+        </li>
+        <li>
+          Verifique se a quantidade está em formato centesimal: “12,50” significa 12h30, e não 12h50. Na dúvida, use o{" "}
+          <Link href="/converter-hora-decimal">conversor de hora decimal</Link>.
+        </li>
+        <li>Compare a quantidade com as suas anotações ou com o espelho de ponto do mês.</li>
+        <li>Refaça o valor aqui com o seu salário, o divisor e o percentual informados pela empresa.</li>
+        <li>
+          Diferenças pequenas podem vir de arredondamento ou de verbas que entram na base de cálculo (como adicionais).
+          Diferenças grandes merecem uma conversa com o RH.
+        </li>
+      </ol>
+
       <h2>Qual divisor usar: 220, 210 ou 200?</h2>
       <p>
         O divisor representa as horas pagas no mês. O <strong>220</strong> é o divisor tradicionalmente usado para a

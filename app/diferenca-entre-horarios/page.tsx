@@ -54,6 +54,50 @@ export default function Page() {
         </p>
       </div>
 
+      <h2>Exemplos de uso no dia a dia</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Situação</th>
+            <th scope="col">Início</th>
+            <th scope="col">Fim</th>
+            <th scope="col">Duração</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Plantão noturno de 12 horas</td><td>19:00</td><td>07:00</td><td>12h00</td></tr>
+          <tr><td>Turno da manhã</td><td>06:00</td><td>14:20</td><td>8h20</td></tr>
+          <tr><td>Turno da tarde/noite</td><td>13:45</td><td>22:05</td><td>8h20</td></tr>
+          <tr><td>Noite de sono</td><td>23:30</td><td>07:15</td><td>7h45</td></tr>
+          <tr><td>Reunião que atrasou</td><td>14:10</td><td>15:55</td><td>1h45</td></tr>
+          <tr><td>Turno de 24 horas</td><td>07:00</td><td>07:00</td><td>24h00 (marque a opção)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Dia dividido em dois períodos</h2>
+      <p>
+        Quando a jornada é dividida — manhã e tarde, com almoço no meio —, calcule cada período separadamente e some os
+        resultados.
+      </p>
+      <div className="example">
+        <p><strong>Exemplo</strong></p>
+        <p>Manhã: 08:00 às 12:00 = 4h00. Tarde: 13:12 às 17:30 = 4h18.</p>
+        <p>
+          Total: 4h00 + 4h18 = <strong>8h18</strong>.
+        </p>
+      </div>
+      <p>
+        Para não precisar somar à mão, a <Link href="/horas-trabalhadas">calculadora de horas trabalhadas</Link> faz
+        tudo de uma vez: informe a entrada (08:00), a saída (17:30) e o intervalo (1:12) e ela chega aos mesmos 8h18.
+      </p>
+
+      <h2>Quanto tempo falta até um horário?</h2>
+      <p>
+        A mesma conta responde a perguntas como “quanto falta para o fim do expediente?”. Coloque o horário atual como
+        início e o horário desejado como fim. Às 15:20, faltam <strong>2h40</strong> para as 18:00. Às 22:30, faltam{" "}
+        <strong>8h00</strong> para as 06:30 do dia seguinte.
+      </p>
+
       <h2>Erros comuns e limitações</h2>
       <ul>
         <li>

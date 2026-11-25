@@ -67,6 +67,49 @@ export default function Page() {
         </p>
       </div>
 
+      <h2>Como acompanhar o banco de horas ao longo do mês</h2>
+      <p>
+        Lançar dia por dia é o mais preciso, mas para acompanhar o mês inteiro costuma ser mais prático fechar o saldo
+        de cada semana e somar as semanas. Um mês hipotético:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Período</th>
+            <th scope="col">Saldo do período</th>
+            <th scope="col">Saldo acumulado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Semana 1</td><td>+2h15</td><td>+2h15</td></tr>
+          <tr><td>Semana 2</td><td>−0h40</td><td>+1h35</td></tr>
+          <tr><td>Semana 3</td><td>+1h30</td><td>+3h05</td></tr>
+          <tr><td>Semana 4</td><td>+0h50</td><td>+3h55</td></tr>
+          <tr><td>Folga compensatória (saída 3h mais cedo)</td><td>−3h00</td><td><strong>+0h55</strong></td></tr>
+        </tbody>
+      </table>
+      <p>
+        Na calculadora, dá para fazer o mesmo usando uma linha por semana: para um saldo positivo, coloque “Previsto”
+        0:00 e o saldo em “Trabalhado” (por exemplo, 2:15); para um saldo negativo, faça o inverso — o saldo em
+        “Previsto” (0:40) e 0:00 em “Trabalhado”. Para carregar o resultado do mês passado, use o campo de saldo
+        anterior.
+      </p>
+
+      <h2>Como conferir o saldo informado pela empresa</h2>
+      <ol>
+        <li>Peça o espelho de ponto do período e anote as horas trabalhadas de cada dia.</li>
+        <li>
+          Confira qual jornada diária a empresa considera prevista (8h00, 8h48, 7h20…). É comum o saldo divergir só por
+          causa disso.
+        </li>
+        <li>
+          Repare se o espelho mostra as horas em formato centesimal (por exemplo, 0,92 em vez de 0h55). Se for o caso,
+          converta com o <Link href="/converter-hora-decimal">conversor de hora decimal</Link> antes de comparar.
+        </li>
+        <li>Lance os dias aqui e compare o saldo final com o do sistema da empresa.</li>
+        <li>Se houver diferença, leve as anotações ao RH apontando os dias em que os números não batem.</li>
+      </ol>
+
       <h2>Erros comuns e limitações</h2>
       <ul>
         <li>

@@ -7,7 +7,27 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({ title: meta.title, description: meta.description, path: meta.path });
 
-const TABLE_MINUTES = [1, 2, 3, 5, 6, 10, 12, 15, 18, 20, 24, 25, 30, 35, 36, 40, 42, 45, 48, 50, 54, 55];
+/** Full 1–59 minute table, laid out in three column pairs of 20 rows. */
+const ROWS = 20;
+const minuteCell = (m: number) => (m <= 59 ? { m, dec: formatDecimal(m / 60, 2, 2) } : null);
+
+function Cell({ m, dec }: { m: number; dec: string }) {
+  return (
+    <>
+      <td>{m}</td>
+      <td>{dec}</td>
+    </>
+  );
+}
+
+function EmptyCell() {
+  return (
+    <>
+      <td />
+      <td />
+    </>
+  );
+}
 
 export default function Page() {
   return (
@@ -52,34 +72,65 @@ export default function Page() {
         <p>1,33 h → 0,33 × 60 = 19,8 ≈ 20 → <strong>1h20</strong></p>
       </div>
 
-      <h2>Tabela de minutos em hora decimal</h2>
+      <h2>Tabela de minutos em hora decimal (1 a 59 minutos)</h2>
+      <p>
+        Para converter, procure os minutos na tabela e some o valor às horas inteiras. Exemplo: 6h37 = 6 + 0,62 ={" "}
+        <strong>6,62 h</strong>.
+      </p>
       <table>
         <thead>
           <tr>
-            <th scope="col">Minutos</th>
-            <th scope="col">Hora decimal</th>
-            <th scope="col">Minutos</th>
-            <th scope="col">Hora decimal</th>
+            <th scope="col">Min</th>
+            <th scope="col">Decimal</th>
+            <th scope="col">Min</th>
+            <th scope="col">Decimal</th>
+            <th scope="col">Min</th>
+            <th scope="col">Decimal</th>
           </tr>
         </thead>
         <tbody>
-          {Array.from({ length: Math.ceil(TABLE_MINUTES.length / 2) }, (_, i) => {
-            const a = TABLE_MINUTES[i];
-            const b = TABLE_MINUTES[i + Math.ceil(TABLE_MINUTES.length / 2)];
+          {Array.from({ length: ROWS }, (_, i) => {
+            const cells = [i + 1, i + 1 + ROWS, i + 1 + 2 * ROWS].map(minuteCell);
             return (
-              <tr key={a}>
-                <td>{a} min</td>
-                <td>{formatDecimal(a / 60, 4)}</td>
-                <td>{b !== undefined ? `${b} min` : ""}</td>
-                <td>{b !== undefined ? formatDecimal(b / 60, 4) : ""}</td>
+              <tr key={i}>
+                {cells.map((c, j) =>
+                  c ? (
+                    <Cell key={j} m={c.m} dec={c.dec} />
+                  ) : (
+                    <EmptyCell key={j} />
+                  ),
+                )}
               </tr>
             );
           })}
         </tbody>
       </table>
       <p>
-        Valores com até 4 casas decimais. Repare que só os múltiplos de 3 minutos têm decimal exato com até 2 casas
-        (como 0,05, 0,1, 0,25); os demais são dízimas e precisam ser arredondados.
+        Valores arredondados a 2 casas, como costumam aparecer em folhas de pagamento. Só os múltiplos de 3 minutos têm
+        decimal exato com 2 casas (3 min = 0,05; 6 min = 0,10; 15 min = 0,25). Os demais são dízimas: 20 minutos, por
+        exemplo, são 0,3333… e aparecem como 0,33. Para cálculos de valor, prefira usar o conversor acima, que mostra 4
+        casas.
+      </p>
+
+      <h2>Hora centesimal: o mesmo que hora decimal</h2>
+      <p>
+        Em departamentos pessoais, sistemas de ponto e holerites, a hora decimal costuma ser chamada de{" "}
+        <strong>hora centesimal</strong>, porque a hora passa a ser dividida em 100 partes em vez de 60. É comum ver
+        no espelho de ponto, por exemplo, “horas extras: 12,50”. Isso significa 12 horas e meia (12h30), e não 12 horas
+        e 50 minutos.
+      </p>
+      <div className="example">
+        <p><strong>Exemplo: conferindo o espelho de ponto</strong></p>
+        <p>O sistema mostra 7,75 horas trabalhadas em um dia.</p>
+        <p>0,75 × 60 = 45 minutos → <strong>7h45</strong>.</p>
+        <p>
+          Se você anotou entrada às 08:00 e saída às 16:45 com 1 hora de intervalo, o número bate. Se a sua anotação
+          der outro valor, vale perguntar ao RH antes de assinar.
+        </p>
+      </div>
+      <p>
+        O mesmo raciocínio vale no sentido contrário: para lançar 37 horas e 24 minutos em uma planilha que só aceita
+        decimais, digite 37,4 (24 ÷ 60 = 0,4).
       </p>
 
       <h2>Erros comuns e limitações</h2>
