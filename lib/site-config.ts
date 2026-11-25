@@ -15,6 +15,8 @@ export const siteConfig = {
    * address, and no fake email is ever displayed.
    */
   contactEmail: null as string | null,
+  /** Google Search Console HTML-tag verification code (public, not a secret). */
+  googleSiteVerification: "3ZmFTX_FjOBtBHg9IEHnVFvfFkJjxAgfDAqiWLKuIVg",
   /** Date the legal/content texts were last reviewed (DD/MM/AAAA). */
   lastUpdated: "25/11/2026",
 } as const;

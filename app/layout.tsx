@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   formatDetection: { telephone: false },
   openGraph: { locale: siteConfig.locale, siteName: siteConfig.name, type: "website" },
+  verification: { google: siteConfig.googleSiteVerification },
 };
 
 export const viewport: Viewport = {
