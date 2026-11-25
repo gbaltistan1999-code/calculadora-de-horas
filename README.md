@@ -1,6 +1,6 @@
 # Calculadora de Horas
 
-Static, SEO-focused Next.js (App Router) + Tailwind CSS website for **https://calculadoradehoras.com**, targeting the Brazilian keyword **"calculadora de horas"**. All user-facing text is Brazilian Portuguese. All calculators run in the browser — no backend, database, API keys or environment variables.
+Static, SEO-focused Next.js (App Router) + Tailwind CSS website for **https://calculadordehoras.com**, targeting the Brazilian keyword **"calculadora de horas"**. All user-facing text is Brazilian Portuguese. All calculators run in the browser — no backend, database, API keys or environment variables.
 
 ## Quick start
 

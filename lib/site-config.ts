@@ -4,7 +4,8 @@
  */
 export const siteConfig = {
   name: "Calculadora de Horas",
-  url: "https://calculadoradehoras.com",
+  // Production domain as connected in Vercel (note: "calculador", without the "a").
+  url: "https://calculadordehoras.com",
   locale: "pt_BR",
   language: "pt-BR",
   description:
