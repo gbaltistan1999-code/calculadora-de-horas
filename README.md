@@ -78,7 +78,7 @@ Cannibalization guard: there are deliberately **no** separate "somar horas" or "
 
 - The homepage links to every calculator (the "Outras calculadoras" section plus links inside the content).
 - Each calculator page links back to `/` with varied anchors ("calculadora de horas", "calculadora de horas e minutos", …) and to related pages: trabalhadas ↔ extras ↔ banco; decimal ↔ extras; noturno ↔ diferença.
-- Breadcrumbs on every inner page (with BreadcrumbList schema). The footer links to all calculators, trust pages and legal pages, plus a "Configurações de cookies" button.
+- Breadcrumbs on every inner page (with BreadcrumbList schema). The footer is deliberately minimal and keyword-free: it links only to the trust and legal pages and the FAQ, plus a "Configurações de cookies" button. Calculator pages are reached through the header menu and the homepage's "Outras calculadoras" section.
 
 ## Structured data
 
