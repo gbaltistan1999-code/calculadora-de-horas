@@ -104,4 +104,10 @@ The only browser storage is `localStorage["cdh-consent"]`, which holds the visit
 - [ ] **EC 141/2026**: the working-week reduction (44h → 42h about two months after publication on 16/10/2026, then 40h one year later) is described from the official text. Re-check the effective dates, how it applies to domestic workers (LC 150/2015 art. 2 still says 44h) and the divisor guidance once the transition starts.
 - [ ] Re-verify all legal figures on planalto.gov.br and update `lastUpdated` in `lib/site-config.ts` and the "consultados em" dates.
 - [ ] After deploy: run PageSpeed Insights, validate structured data with Google's Rich Results Test, and submit `sitemap.xml` in Google Search Console.
-- [ ] Optional: add a 1200×630 Open Graph image (`app/opengraph-image.png`).
+
+## Brand assets
+
+- `public/logo.png`: header wordmark (555×144, shown at 40px tall through `next/image`).
+- `app/icon.png` (192×192, transparent corners) and `app/apple-icon.png` (180×180, opaque): favicons, wired up automatically by Next.js.
+- `app/opengraph-image.png` (1200×630): social sharing image, wired up automatically.
+- The accent color `--color-accent` in `app/globals.css` matches the logo teal (`#14736A`).

@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { siteConfig } from "./site-config";
 
+/** Generated from the logo; see app/opengraph-image.png. */
+const OG_IMAGE = {
+  url: `${siteConfig.url}/opengraph-image.png`,
+  width: 1200,
+  height: 630,
+  alt: siteConfig.name,
+};
+
 export function absoluteUrl(path: string): string {
   // Next.js normalizes the root canonical to the bare origin; keep sitemap/JSON-LD identical.
   if (path === "/" || path === "") return siteConfig.url;
@@ -27,8 +35,15 @@ export function buildMetadata(opts: {
       siteName: siteConfig.name,
       title: opts.title,
       description: opts.description,
+      // Page-level openGraph replaces the root one, so the shared image is set explicitly.
+      images: [OG_IMAGE],
     },
-    twitter: { card: "summary", title: opts.title, description: opts.description },
+    twitter: {
+      card: "summary_large_image",
+      title: opts.title,
+      description: opts.description,
+      images: [OG_IMAGE.url],
+    },
   };
 }
 
